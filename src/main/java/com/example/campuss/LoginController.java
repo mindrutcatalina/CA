@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
+
 import java.io.File;
 import java.net.URL;
 import java.sql.Connection;
@@ -46,8 +47,9 @@ public class LoginController implements Initializable {
     }
 
     public void loginButtonOnAction(ActionEvent event){
-        loginMessageLabel.setText("You try to login");
+
         if(!usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()) {
+            loginMessageLabel.setText("You try to login");
             validateLogin();
         }else{
             loginMessageLabel.setText("Please enter username and password");
@@ -63,7 +65,8 @@ public class LoginController implements Initializable {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = " select count(1) from administrator where username = ' " + usernameTextField.getText() +" 'and password =' " + enterPasswordField.getText() +"'";
+        String verifyLogin = "SELECT * FROM cont where username ='" + usernameTextField.getText() +"' AND password = '" + enterPasswordField.getText() + "'";
+
 
         try{
             Statement statement = connectDB.createStatement();
