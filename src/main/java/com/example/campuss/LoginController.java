@@ -67,7 +67,7 @@ public class LoginController implements Initializable {
 
         String verifyLogin = "SELECT * FROM cont where username ='" + usernameTextField.getText() +"' AND password = '" + enterPasswordField.getText() + "'";
 
-
+        //String verifyLogin = "SELECT count(1) FROM cont where username ='administrator' AND password = '1234'";
         try{
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
