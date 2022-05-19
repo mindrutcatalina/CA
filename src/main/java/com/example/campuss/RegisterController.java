@@ -2,8 +2,6 @@ package com.example.campuss;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -37,7 +35,7 @@ public class RegisterController implements Initializable {
     @FXML
     private Label registrationMessageLabel;
     @FXML
-    public TextField setPasswordTextField;
+    public TextField setPasswordField;
     @FXML
     public TextField confirmPasswordField;
 
@@ -49,7 +47,7 @@ public class RegisterController implements Initializable {
     }
 
     public void registerButtonOnAction(ActionEvent event){
-        if(setPasswordTextField.getText().equals(confirmPasswordField.getText())){
+        if(setPasswordField.getText().equals(confirmPasswordField.getText())){
             registerUser();
             confirmPasswordLabel.setText((" "));
             registrationMessageLabel.setText("User has been registered successfully !");
@@ -72,10 +70,10 @@ public class RegisterController implements Initializable {
         String firstname = firstnameTextField.getText();
         String lastname = lastnameTextField.getText();
         String username = usernameTextField.getText();
-        String password = setPasswordTextField.getText();
+        String password = setPasswordField.getText();
 
 
-        String insertFields = "INSERT INTO user_account(firstname, lastname, username, password) VALUE ('";
+        String insertFields = "INSERT INTO user_account(firstname, lastname, username, password) VALUES ('";
         String insertValues = firstname + "','" + lastname + "','" + username + "','" + password +"')";
         String insertToRegister = insertFields + insertValues;
 
@@ -83,7 +81,7 @@ public class RegisterController implements Initializable {
             Statement statement = connectDB.createStatement();
             statement.executeUpdate(insertToRegister);
             registrationMessageLabel.setText("User has been registered successfully !");
-            registrationMessageLabel.setText("Contul dumneavoastra a fost inregistrat!");
+            registrationMessageLabel.setText("Contul a fost inregistrat!");
 
         }catch(Exception e){
             e.printStackTrace();
