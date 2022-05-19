@@ -36,7 +36,7 @@ public class LoginController implements Initializable {
     private PasswordField enterPasswordField;
 
     @Override
-    public void initialize(URL url , ResourceBundle resourceBundle){
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         File brandingFile = new File("Imagini/graduation.png");
         Image brandingImage = new Image(brandingFile.toURI().toString());
         brandingImageView.setImage(brandingImage);
@@ -46,46 +46,53 @@ public class LoginController implements Initializable {
         lockImageView.setImage(lockImage);
     }
 
-    public void loginButtonOnAction(ActionEvent event){
+    public void loginButtonOnAction(ActionEvent event) {
 
-        if(!usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()) {
+        if (!usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()) {
             loginMessageLabel.setText("You try to login");
             validateLogin();
-        }else{
+        } else {
             loginMessageLabel.setText("Please enter username and password");
         }
     }
 
-    public void cancelButtonOnAction(ActionEvent event){
+    public void cancelButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
 
     }
-    public void validateLogin(){
+
+    public void validateLogin() {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = "SELECT * FROM cont where username ='" + usernameTextField.getText() +"' AND password = '" + enterPasswordField.getText() + "'";
+        String verifyLogin = "SELECT * FROM cont where username ='" + usernameTextField.getText() + "' AND password = '" + enterPasswordField.getText() + "'";
 
-
-        try{
+        //String verifyLogin = "SELECT count(1) FROM cont where username ='administrator' AND password = '1234'";
+        try {
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
 
 
-
-            while(queryResult.next()) {
+            while (queryResult.next()) {
                 if (queryResult.getInt(1) == 1) {
-                    loginMessageLabel.setText("Congratulations!");
+                    // loginMessageLabel.setText("Congratulations!");
+
+                    createAccountForm();
+
                 } else {
                     loginMessageLabel.setText("Invalid login.Please try again!");
                 }
 
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             e.getCause();
         }
+    }
+
+    public void createAccountForm(){
+
     }
 
 }
