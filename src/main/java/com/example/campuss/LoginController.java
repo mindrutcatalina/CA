@@ -1,7 +1,10 @@
 package com.example.campuss;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -10,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
+import javafx.stage.StageStyle;
 
 
 import java.io.File;
@@ -66,9 +70,9 @@ public class LoginController implements Initializable {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = "SELECT * FROM cont where username ='" + usernameTextField.getText() + "' AND password = '" + enterPasswordField.getText() + "'";
+        String verifyLogin = "SELECT * FROM log_reg where username ='" + usernameTextField.getText() + "' AND password = '" + enterPasswordField.getText() + "'";
 
-        //String verifyLogin = "SELECT count(1) FROM cont where username ='administrator' AND password = '1234'";
+
         try {
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
@@ -76,8 +80,7 @@ public class LoginController implements Initializable {
 
             while (queryResult.next()) {
                 if (queryResult.getInt(1) == 1) {
-                    // loginMessageLabel.setText("Congratulations!");
-
+                    //loginMessageLabel.setText("Congratulations!");
                     createAccountForm();
 
                 } else {
@@ -91,8 +94,17 @@ public class LoginController implements Initializable {
         }
     }
 
-    public void createAccountForm(){
+    public void createAccountForm() {
+        try {
 
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("administrator.fxml"));
+            Stage registerStage = new Stage();
+            registerStage.initStyle(StageStyle.UNDECORATED);
+            registerStage.setScene(new Scene(fxmlLoader.load(), 800, 600));
+            registerStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
     }
-
 }
