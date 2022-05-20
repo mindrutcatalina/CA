@@ -25,6 +25,12 @@ public class RegisterController implements Initializable {
     @FXML
     public TextField usernameTextField;
     @FXML
+    public TextField emailTextField;
+    @FXML
+    public TextField phonenumberTextField;
+    @FXML
+    public TextField rolTextField;
+    @FXML
     public Button registerButton;
     @FXML
     public Label confirmPasswordLabel;
@@ -69,12 +75,15 @@ public class RegisterController implements Initializable {
 
         String firstname = firstnameTextField.getText();
         String lastname = lastnameTextField.getText();
+        String rol = rolTextField.getText();
+        String email = emailTextField.getText();
+        String phonenumber = phonenumberTextField.getText();
         String username = usernameTextField.getText();
         String password = setPasswordField.getText();
 
 
-        String insertFields = "INSERT INTO user_account(firstname, lastname, username, password) VALUES ('";
-        String insertValues = firstname + "','" + lastname + "','" + username + "','" + password +"')";
+        String insertFields = "INSERT INTO log_reg(firstname, lastname,rol,email,phonenumber,username, password) VALUES ('";
+        String insertValues = firstname + "','" + lastname + "','" +rol +"','" + email +"','" + phonenumber +"','" + username + "','" + password +"')";
         String insertToRegister = insertFields + insertValues;
 
         try{

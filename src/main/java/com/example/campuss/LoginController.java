@@ -70,7 +70,7 @@ public class LoginController implements Initializable {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = "SELECT * FROM cont where username ='" + usernameTextField.getText() + "' AND password = '" + enterPasswordField.getText() + "'";
+        String verifyLogin = "SELECT * FROM log_reg where username ='" + usernameTextField.getText() + "' AND password = '" + enterPasswordField.getText() + "'";
 
 
         try {
@@ -96,10 +96,11 @@ public class LoginController implements Initializable {
 
     public void createAccountForm() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("register.fxml"));
+
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("administrator.fxml"));
             Stage registerStage = new Stage();
             registerStage.initStyle(StageStyle.UNDECORATED);
-            registerStage.setScene(new Scene(fxmlLoader.load(), 600, 600));
+            registerStage.setScene(new Scene(fxmlLoader.load(), 800, 600));
             registerStage.show();
         } catch (Exception e) {
             e.printStackTrace();
