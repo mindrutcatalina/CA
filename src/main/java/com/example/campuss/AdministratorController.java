@@ -27,4 +27,7 @@ public class AdministratorController {
         stage.setScene(scene);
         stage.show();
     }
+
+}
+
 }

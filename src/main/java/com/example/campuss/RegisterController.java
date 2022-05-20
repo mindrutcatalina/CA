@@ -2,6 +2,8 @@ package com.example.campuss;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -41,7 +43,7 @@ public class RegisterController implements Initializable {
     @FXML
     private Label registrationMessageLabel;
     @FXML
-    public TextField setPasswordField;
+    public TextField setPasswordTextField;
     @FXML
     public TextField confirmPasswordField;
 
@@ -52,26 +54,25 @@ public class RegisterController implements Initializable {
         shieldImageView.setImage(picture);
     }
 
-    public void registerButtonOnAction(ActionEvent event){
-        if(setPasswordField.getText().equals(confirmPasswordField.getText())){
+    public void registerButtonOnAction(ActionEvent event) {
+        if (setPasswordTextField.getText().equals(confirmPasswordField.getText())) {
             registerUser();
             confirmPasswordLabel.setText((" "));
             registrationMessageLabel.setText("User has been registered successfully !");
-        }else{
+        } else {
             confirmPasswordLabel.setText("Password does not match.");
         }
         registerUser();
     }
 
-    public void closeButtonOnAction(ActionEvent event){
+    public void closeButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
         Platform.exit();
     }
 
-    public void registerUser(){
-        DatabaseConnection connectNow = new DatabaseConnection();
-        Connection connectDB = connectNow.getConnection();
+    public void registerUser() {
+
 
         String firstname = firstnameTextField.getText();
         String lastname = lastnameTextField.getText();
@@ -97,6 +98,7 @@ public class RegisterController implements Initializable {
             e.getCause();
 
         }
+
     }
 }
 
