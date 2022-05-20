@@ -1,7 +1,10 @@
 package com.example.campuss;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -10,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
+import javafx.stage.StageStyle;
 
 
 import java.io.File;
@@ -36,7 +40,7 @@ public class LoginController implements Initializable {
     private PasswordField enterPasswordField;
 
     @Override
-    public void initialize(URL url , ResourceBundle resourceBundle){
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         File brandingFile = new File("Imagini/graduation.png");
         Image brandingImage = new Image(brandingFile.toURI().toString());
         brandingImageView.setImage(brandingImage);
@@ -46,46 +50,61 @@ public class LoginController implements Initializable {
         lockImageView.setImage(lockImage);
     }
 
-    public void loginButtonOnAction(ActionEvent event){
+    public void loginButtonOnAction(ActionEvent event) {
 
-        if(!usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()) {
+        if (!usernameTextField.getText().isBlank() && !enterPasswordField.getText().isBlank()) {
             loginMessageLabel.setText("You try to login");
             validateLogin();
-        }else{
+        } else {
             loginMessageLabel.setText("Please enter username and password");
         }
     }
 
-    public void cancelButtonOnAction(ActionEvent event){
+    public void cancelButtonOnAction(ActionEvent event) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
 
     }
-    public void validateLogin(){
+
+    public void validateLogin() {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String verifyLogin = "SELECT * FROM cont where username ='" + usernameTextField.getText() +"' AND password = '" + enterPasswordField.getText() + "'";
+        String verifyLogin = "SELECT * FROM log_reg where username ='" + usernameTextField.getText() + "' AND password = '" + enterPasswordField.getText() + "'";
 
 
-        try{
+        try {
             Statement statement = connectDB.createStatement();
             ResultSet queryResult = statement.executeQuery(verifyLogin);
 
 
-
-            while(queryResult.next()) {
+            while (queryResult.next()) {
                 if (queryResult.getInt(1) == 1) {
-                    loginMessageLabel.setText("Congratulations!");
+                    //loginMessageLabel.setText("Congratulations!");
+                    createAccountForm();
+
                 } else {
                     loginMessageLabel.setText("Invalid login.Please try again!");
                 }
 
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             e.getCause();
         }
     }
 
+    public void createAccountForm() {
+        try {
+
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("administrator.fxml"));
+            Stage registerStage = new Stage();
+            registerStage.initStyle(StageStyle.UNDECORATED);
+            registerStage.setScene(new Scene(fxmlLoader.load(), 800, 600));
+            registerStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
 }
