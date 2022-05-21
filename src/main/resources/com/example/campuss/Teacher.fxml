@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.TeacherController">
+    <children>
+        <AnchorPane prefHeight="93.0" prefWidth="800.0" style="-fx-background-color: #a91693;" AnchorPane.bottomAnchor="507.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="24.0" layoutY="26.0" prefHeight="39.0" prefWidth="216.0" text="Teachers" textFill="#faf0f8">
+                    <font>
+                        <Font name="Cambria Italic" size="31.0" />
+                    </font>
+                </Label>
+                <Button fx:id="logoutButton" layoutX="688.0" layoutY="52.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="91.0" text="Logout" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="91.0" prefHeight="340.0" prefWidth="176.0" style="-fx-background-color: #4e194b;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="462.0" AnchorPane.topAnchor="91.0">
+            <children>
+                <Button layoutY="62.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="122.0" style="-fx-background-color: #4e194b;" text="Messages" textFill="#faf7f7">
+                    <font>
+                        <Font size="21.0" />
+                    </font>
+                </Button>
+                <Button layoutY="145.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="162.0" style="-fx-background-color: #4e194b;" text="Student's List " textFill="WHITE">
+                    <font>
+                        <Font size="21.0" />
+                    </font>
+                </Button>
+                <Button layoutX="-1.0" layoutY="232.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="176.0" style="-fx-background-color: #4e194b;" textFill="#fcfbfb" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

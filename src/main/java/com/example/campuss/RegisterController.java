@@ -48,7 +48,7 @@ public class RegisterController implements Initializable {
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File imagine1 = new File("Desktop/user.png");
+        File imagine1 = new File("Imagini/user.png");
         Image picture = new Image(imagine1.toURI().toString());
         shieldImageView.setImage(picture);
     }
@@ -61,7 +61,6 @@ public class RegisterController implements Initializable {
         }else{
             confirmPasswordLabel.setText("Password does not match.");
         }
-        registerUser();
     }
 
     public void closeButtonOnAction(ActionEvent event){
