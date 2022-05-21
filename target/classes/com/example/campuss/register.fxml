@@ -55,12 +55,12 @@
         <TextField fx:id="usernameTextField" layoutX="43.0" layoutY="438.0" prefHeight="25.0" prefWidth="500.0" promptText="Username" />
         <Button fx:id="registerButton" layoutX="147.0" layoutY="634.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="26.0" prefWidth="355.0" style="-fx-background-color: #d3b3bf;" text="Register" />
         <Button fx:id="closeButton" layoutX="147.0" layoutY="683.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="26.0" prefWidth="355.0" style="-fx-background-color: #d3b3bf;" text="Close" />
-        <Label fx:id="registrationMessageLabel" layoutX="183.0" layoutY="122.0" text="User registered successfully !" textFill="#3c05ef">
+        <Label fx:id="registrationMessageLabel" layoutX="183.0" layoutY="122.0" text="User registered successfully !" textFill="#3c05ef" visible="false">
             <font>
                 <Font size="14.0" />
             </font>
         </Label>
-        <Label fx:id="confirmPasswordLabel" layoutX="197.0" layoutY="540.0" prefHeight="20.0" prefWidth="226.0" text="Password does not match." textFill="#ea0f0f">
+        <Label fx:id="confirmPasswordLabel" layoutX="197.0" layoutY="540.0" prefHeight="20.0" prefWidth="226.0" text="Password does not match." textFill="#ea0f0f" visible="false">
             <font>
                 <Font size="14.0" />
             </font>

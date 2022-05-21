@@ -15,4 +15,8 @@ public class StudentController {
 
     public void gradesButtonOnAction(ActionEvent actionEvent) {
     }
+
+    public void logoutButtonOnAction(ActionEvent actionEvent) {
+
+    }
 }
