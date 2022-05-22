@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="@localhost">
+<dataSource name="admin@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.39">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
@@ -946,85 +946,104 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Charset>utf8mb4</Charset>
     </collation>
     <schema id="274" parent="1" name="account">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="275" parent="1" name="admin">
       <Current>1</Current>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="275" parent="1" name="information_schema">
+    <schema id="276" parent="1" name="information_schema">
       <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="276" parent="1" name="mysql">
+    <schema id="277" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="277" parent="1" name="performance_schema">
+    <schema id="278" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="278" parent="1" name="sys">
+    <schema id="279" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="279" parent="1" name="user_account">
+    <schema id="280" parent="1" name="user_account">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="280" parent="1" name="mysql.infoschema">
+    <user id="281" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="281" parent="1" name="mysql.session">
+    <user id="282" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="282" parent="1" name="mysql.sys">
+    <user id="283" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="283" parent="1" name="root">
+    <user id="284" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="284" parent="274" name="cont">
+    <table id="285" parent="275" name="log_reg">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="285" parent="284" name="IdCont">
+    <column id="286" parent="285" name="idlog_reg">
       <AutoIncrement>2</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="286" parent="284" name="Username">
+    <column id="287" parent="285" name="firstname">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="287" parent="284" name="Password">
+    <column id="288" parent="285" name="lastname">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <index id="288" parent="284" name="IdCont_UNIQUE">
-      <ColNames>IdCont</ColNames>
+    <column id="289" parent="285" name="rol">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="290" parent="285" name="email">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="291" parent="285" name="phonenumber">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="292" parent="285" name="username">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="293" parent="285" name="password">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <index id="294" parent="285" name="idlog_reg_UNIQUE">
+      <ColNames>idlog_reg</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="289" parent="284" name="Username_UNIQUE">
-      <ColNames>Username</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="290" parent="284" name="PRIMARY">
-      <ColNames>IdCont</ColNames>
+    <key id="295" parent="285" name="PRIMARY">
+      <ColNames>idlog_reg</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="291" parent="284" name="IdCont_UNIQUE">
-      <ColNames>IdCont</ColNames>
-      <UnderlyingIndexName>IdCont_UNIQUE</UnderlyingIndexName>
-    </key>
-    <key id="292" parent="284" name="Username_UNIQUE">
-      <ColNames>Username</ColNames>
-      <UnderlyingIndexName>Username_UNIQUE</UnderlyingIndexName>
+    <key id="296" parent="285" name="idlog_reg_UNIQUE">
+      <ColNames>idlog_reg</ColNames>
+      <UnderlyingIndexName>idlog_reg_UNIQUE</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>
