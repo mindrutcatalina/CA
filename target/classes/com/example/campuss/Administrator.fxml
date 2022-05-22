@@ -73,7 +73,7 @@
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button layoutY="280.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="189.0" style="-fx-background-color: #2e1136;" text="Time Scheduling" textFill="#fcfbfb">
+                  <Button layoutY="280.0" mnemonicParsing="false" onAction="#remove4" prefHeight="46.0" prefWidth="189.0" style="-fx-background-color: #2e1136;" text="Time Scheduling" textFill="#fcfbfb">
                      <font>
                         <Font size="19.0" />
                      </font>
