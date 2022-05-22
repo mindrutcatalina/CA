@@ -1,5 +1,8 @@
 com\example\campuss\DatabaseConnection.class
-com\example\campuss\LoginController.class
 com\example\campuss\HelloApplication.class
 com\example\campuss\RegisterController.class
+com\example\campuss\LoginController.class
 module-info.class
+com\example\campuss\TeacherController.class
+com\example\campuss\StudentController.class
+com\example\campuss\AdministratorController.class
