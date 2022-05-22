@@ -3,6 +3,8 @@ package com.example.campuss;
 import javafx.event.ActionEvent;
 
 public class StudentController {
+    public void logoutButtonOnAction(ActionEvent actionEvent) {
+    }
 
     public void subjectsButtonOnAction(ActionEvent actionEvent) {
     }
