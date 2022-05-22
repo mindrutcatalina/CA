@@ -39,6 +39,7 @@ public class AdministratorController implements Initializable {
     private Stage stage;
     private Scene scene;
     public Parent root;
+    @FXML
     private AnchorPane scenePane;
 
 
