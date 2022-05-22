@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.DataExamController">
+   <children>
+      <DatePicker fx:id="myDatePicker" layoutX="146.0" layoutY="65.0" onAction="#getDate" prefHeight="28.0" prefWidth="146.0" promptText="Enter a date" />
+      <Label layoutX="219.0" layoutY="24.0" />
+      <Label layoutX="191.0" layoutY="15.0" prefHeight="35.0" prefWidth="218.0" text="Time Scheduling">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="70.0" text="Beginning" />
+      <Label layoutX="34.0" layoutY="107.0" text="Session 1" />
+      <Label layoutX="34.0" layoutY="146.0" text="Winter Holiday" />
+      <Label layoutX="34.0" layoutY="183.0" />
+      <Label layoutX="34.0" layoutY="223.0" text="Session 2" />
+      <Label layoutX="34.0" layoutY="258.0" text="Summer Holiday" />
+      <Label layoutX="34.0" layoutY="295.0" text="The End" />
+      <DatePicker fx:id="myDatePicker1" layoutX="146.0" layoutY="141.0" onAction="#getDate2" prefHeight="28.0" prefWidth="146.0" promptText="Enter a date" />
+      <DatePicker fx:id="myDatePicker2" layoutX="146.0" layoutY="178.0" onAction="#getDate3" prefHeight="28.0" prefWidth="146.0" promptText="Enter a date" />
+      <DatePicker fx:id="myDatePicker3" layoutX="146.0" layoutY="102.0" onAction="#getDate1" prefHeight="28.0" prefWidth="146.0" promptText="Enter a date" />
+      <DatePicker fx:id="myDatePicker4" layoutX="146.0" layoutY="218.0" onAction="#getDate4" prefHeight="28.0" prefWidth="146.0" promptText="Enter a date" />
+      <DatePicker fx:id="myDatePicker5" layoutX="146.0" layoutY="253.0" onAction="#getDate5" prefHeight="28.0" prefWidth="146.0" promptText="Enter a date" />
+      <DatePicker fx:id="myDatePicker6" layoutX="146.0" layoutY="290.0" onAction="#getDate6" prefHeight="28.0" prefWidth="146.0" promptText="Enter a date" />
+      <Label layoutX="34.0" layoutY="183.0" text="Easter Holiday" />
+      <Label fx:id="myLabel2" layoutX="338.0" layoutY="108.0" prefHeight="18.0" prefWidth="146.0" text="Add" textFill="#ec1616" />
+      <Label fx:id="myLabel3" layoutX="338.0" layoutY="147.0" prefHeight="18.0" prefWidth="120.0" text="Add" textFill="#e70909" />
+      <Label fx:id="myLabel4" layoutX="338.0" layoutY="184.0" prefHeight="18.0" prefWidth="88.0" text="Add" textFill="#fa0000" />
+      <Label fx:id="myLabel5" layoutX="338.0" layoutY="224.0" text="Add" textFill="#fc0000" />
+      <Label fx:id="myLabel6" layoutX="338.0" layoutY="258.0" text="Add" textFill="#fc0303" />
+      <Label fx:id="myLabel7" layoutX="338.0" layoutY="295.0" text="Add" textFill="#ec0303" />
+      <Label fx:id="myLabel1" layoutX="338.0" layoutY="70.0" text="Add" textFill="#ae1515">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="Back1" layoutX="475.0" layoutY="347.0" mnemonicParsing="false" onAction="#Back1" text="Back" />
+   </children>
+</AnchorPane>
