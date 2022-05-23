@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -23,6 +24,9 @@ public class SubjectsAddController{
 
     @FXML
     private TextField nameSubjectTextField;
+
+    @FXML
+    private Label registrationMessageLabel;
 
     @FXML
     private TextField yearTextField;
@@ -56,6 +60,9 @@ public class SubjectsAddController{
         try {
             Statement statement = connectDB.createStatement();
             statement.executeUpdate(insertToRegister);
+
+            registrationMessageLabel.setText("Subject has been registered successfully !");
+
         } catch (Exception e) {
             e.printStackTrace();
             e.getCause();
