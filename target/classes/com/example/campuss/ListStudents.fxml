@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.List">
+   <children>
+      <TableView fx:id="table" layoutX="62.0" layoutY="23.0" prefHeight="519.0" prefWidth="688.0">
+        <columns>
+          <TableColumn fx:id="firstname" prefWidth="336.0" text="firstname" />
+          <TableColumn fx:id="lastname" prefWidth="226.0" text="lastname" />
+        </columns>
+      </TableView>
+      <Button fx:id="Back" layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#BackOnAction" text="Back" />
+   </children>
+</AnchorPane>

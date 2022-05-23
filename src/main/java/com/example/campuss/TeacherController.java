@@ -2,6 +2,8 @@ package com.example.campuss;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -10,8 +12,12 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.util.Objects;
+
 public class TeacherController {
 
+    public Button studentsButton;
     @FXML
     private Button logoutButton;
     @FXML
@@ -20,6 +26,9 @@ public class TeacherController {
     private Scene scene;
 
     public Parent root;
+
+
+
 
     public void logout(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -34,4 +43,11 @@ public class TeacherController {
 
     }
 
+    public void studentsButtonOnAction(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ListStudents.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

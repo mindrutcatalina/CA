@@ -84,7 +84,7 @@ public class LoginController implements Initializable {
                 if (rol.equals("student")) {
 
                     loginButton.setOnAction(actionEvent -> {
-                        // take customers to their screen
+
                         loginButton.getScene().getWindow().hide();
                         FXMLLoader loader = new FXMLLoader();
 
@@ -104,7 +104,7 @@ public class LoginController implements Initializable {
                 } else {
 
                     loginButton.setOnAction(actionEvent -> {
-                        // take customers to their screen
+
                         loginButton.getScene().getWindow().hide();
                         FXMLLoader loader = new FXMLLoader();
 
@@ -179,7 +179,7 @@ public class LoginController implements Initializable {
         Connection connectDB = connectNow.getConnection();
 
         String hashedPassword = encodePassword(usernameTextField.getText(), enterPasswordField.getText());
-        String verifyLogin = "SELECT count(1) FROM log_reg WHERE username = '" + usernameTextField.getText() + "' AND password ='" + hashedPassword + "'";
+        String verifyLogin = "SELECT * FROM log_reg WHERE username = '" + usernameTextField.getText() + "' AND password ='" + hashedPassword + "'";
 
 
         try {
@@ -201,6 +201,4 @@ public class LoginController implements Initializable {
             e.getCause();
         }
     }
-
-
 }
