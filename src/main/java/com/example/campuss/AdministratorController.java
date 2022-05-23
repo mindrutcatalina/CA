@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.Objects;
 public class AdministratorController {
 
+    public Button addsubjectsButton;
     @FXML
     private Label welcomeText;
 
@@ -55,7 +56,7 @@ public class AdministratorController {
         stage.show();
     }
 
-    public void remove3(ActionEvent event) throws IOException {
+    public void remove5(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SubjectAdded.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
