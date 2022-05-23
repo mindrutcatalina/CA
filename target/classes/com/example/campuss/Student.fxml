@@ -43,6 +43,7 @@
                         <Font size="24.0" />
                     </font>
                 </Button>
+            <Button layoutX="71.0" layoutY="445.0" mnemonicParsing="false" onAction="#back" text="Button" />
             </children>
         </AnchorPane>
     </children>

@@ -990,60 +990,85 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="286" parent="285" name="idlog_reg">
+    <table id="286" parent="275" name="subjects">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="287" parent="285" name="idlog_reg">
       <AutoIncrement>2</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="287" parent="285" name="firstname">
+    <column id="288" parent="285" name="firstname">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="288" parent="285" name="lastname">
+    <column id="289" parent="285" name="lastname">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="289" parent="285" name="rol">
+    <column id="290" parent="285" name="rol">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="290" parent="285" name="email">
+    <column id="291" parent="285" name="email">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="291" parent="285" name="phonenumber">
+    <column id="292" parent="285" name="phonenumber">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="292" parent="285" name="username">
+    <column id="293" parent="285" name="username">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="293" parent="285" name="password">
-      <DataType>varchar(45)|0s</DataType>
+    <column id="294" parent="285" name="password">
+      <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <index id="294" parent="285" name="idlog_reg_UNIQUE">
+    <index id="295" parent="285" name="idlog_reg_UNIQUE">
       <ColNames>idlog_reg</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="295" parent="285" name="PRIMARY">
+    <key id="296" parent="285" name="PRIMARY">
       <ColNames>idlog_reg</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="296" parent="285" name="idlog_reg_UNIQUE">
+    <key id="297" parent="285" name="idlog_reg_UNIQUE">
       <ColNames>idlog_reg</ColNames>
       <UnderlyingIndexName>idlog_reg_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="298" parent="286" name="idsubjects">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="299" parent="286" name="subjectname">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="300" parent="286" name="subjectyear">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <key id="301" parent="286" name="PRIMARY">
+      <ColNames>idsubjects</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
     </key>
   </database-model>
 </dataSource>
