@@ -37,7 +37,7 @@ public class EnrollmentRequestController {
 
     @FXML
     void registrationButton(ActionEvent event) {
-  registerUser();
+        registerUser();
     }
 
     public void registerUser() {
