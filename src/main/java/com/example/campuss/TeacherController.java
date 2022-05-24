@@ -30,18 +30,20 @@ public class TeacherController {
 
 
 
-    public void logout(ActionEvent event) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Logout ");
-        alert.setHeaderText("You're about to logout !");
-        alert.setContentText("Do you want to save before existing ? :");
-        if (alert.showAndWait().get() == ButtonType.OK) {
-            this.stage = (Stage) this.scenePane.getScene().getWindow();
-            System.out.println("You are successfully logged out ! ");
-            this.stage.close();
-        }
+    public void logoutButtonOnAction(ActionEvent event) throws IOException {
+        try {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Login.fxml")));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
 
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
     }
+
 
     public void studentsButtonOnAction(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ListStudents.fxml")));

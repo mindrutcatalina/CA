@@ -9,5 +9,6 @@ module com.example.campuss {
     requires org.kordamp.bootstrapfx.core;
 
     opens com.example.campuss to javafx.fxml;
+
     exports com.example.campuss;
 }
