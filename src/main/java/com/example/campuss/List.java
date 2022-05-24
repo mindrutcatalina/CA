@@ -18,7 +18,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -47,12 +46,6 @@ public class List implements Initializable {
 
     @FXML
     private TextField keyword;
-    @FXML
-    private TextField firstnameTextField;
-
-    @FXML
-    private TextField lastnameTextField;
-
 
     ObservableList<User> list = FXCollections.observableArrayList();
 
@@ -95,14 +88,5 @@ public class List implements Initializable {
         stage.setScene(scene);
         stage.show();
 
-    }
-
-    public void InsertOnAction(MouseEvent mouseEvent) {
-
-    }
-
-    public void deleteOnAction(ActionEvent event) {
-        int selectedID = table.getSelectionModel().getSelectedIndex();
-        table.getItems().remove(selectedID);
     }
 }
