@@ -38,7 +38,7 @@ public class ViewSubjectsController implements Initializable {
     @FXML
     private TableView<User2> tableV;
 
-
+    public Parent root;
     ObservableList<User2> list1 = FXCollections.observableArrayList();
 
 
@@ -80,5 +80,13 @@ public class ViewSubjectsController implements Initializable {
             stage.show();
 
         }
+
+    public void backOnEnrollment(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("EnrollmentRequest.fxml")));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     }
 
