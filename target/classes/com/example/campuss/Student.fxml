@@ -43,6 +43,11 @@
                         <Font size="24.0" />
                     </font>
                 </Button>
+            <Button layoutY="434.0" mnemonicParsing="false" onAction="#enrollmentOnAction" prefHeight="44.0" prefWidth="202.0" style="-fx-background-color: #2e1136;" text="Enrollment Request" textFill="#efecec">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
     </children>

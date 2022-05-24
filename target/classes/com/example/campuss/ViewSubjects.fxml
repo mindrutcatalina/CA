@@ -5,7 +5,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.ViewSubjectsController">
    <children>
       <TableView fx:id="tableV" layoutX="18.0" layoutY="24.0" prefHeight="524.0" prefWidth="768.0">
@@ -13,6 +12,7 @@
           <TableColumn fx:id="subjectname" prefWidth="726.0" text="subjectname" />
         </columns>
       </TableView>
-      <Button fx:id="back" layoutX="18.0" layoutY="561.0" mnemonicParsing="false" onAction="#backOnAction" text="Back" />
+      <Button fx:id="back" layoutX="18.0" layoutY="561.0" mnemonicParsing="false" onAction="#backOnAction" prefHeight="26.0" prefWidth="162.0" text="Back to Student page" />
+      <Button layoutX="570.0" layoutY="561.0" mnemonicParsing="false" onAction="#backOnEnrollment" prefHeight="26.0" prefWidth="198.0" text="Back to Enrollment page" />
    </children>
 </AnchorPane>
