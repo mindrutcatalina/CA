@@ -4,7 +4,7 @@
     <root id="1">
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <ServerVersion>8.0.29</ServerVersion>
+      <ServerVersion>8.0.28</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -904,7 +904,7 @@
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="285" parent="275" name="cont">
+    <table id="285" parent="275" name="grades">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
@@ -916,182 +916,102 @@
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="288" parent="275" name="user_account">
-      <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </table>
-    <column id="289" parent="285" name="IdCont">
-      <AutoIncrement>3</AutoIncrement>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="290" parent="285" name="Username">
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="291" parent="285" name="Password">
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <index id="292" parent="285" name="cont_IdCont_uindex">
-      <ColNames>IdCont</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="293" parent="285" name="cont_username_uindex">
-      <ColNames>Username</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="294" parent="285" name="PRIMARY">
-      <ColNames>IdCont</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <key id="295" parent="285" name="cont_IdCont_uindex">
-      <ColNames>IdCont</ColNames>
-      <UnderlyingIndexName>cont_IdCont_uindex</UnderlyingIndexName>
-    </key>
-    <key id="296" parent="285" name="cont_username_uindex">
-      <ColNames>Username</ColNames>
-      <UnderlyingIndexName>cont_username_uindex</UnderlyingIndexName>
-    </key>
-    <column id="297" parent="286" name="idlog_reg">
-      <AutoIncrement>22</AutoIncrement>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="298" parent="286" name="firstname">
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="299" parent="286" name="lastname">
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="300" parent="286" name="rol">
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="301" parent="286" name="email">
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <column id="302" parent="286" name="phonenumber">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-    </column>
-    <column id="303" parent="286" name="username">
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>7</Position>
-    </column>
-    <column id="304" parent="286" name="password">
-      <DataType>varchar(100)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>8</Position>
-    </column>
-    <index id="305" parent="286" name="idlog_reg_UNIQUE">
-      <ColNames>idlog_reg</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="306" parent="286" name="PRIMARY">
-      <ColNames>idlog_reg</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <key id="307" parent="286" name="idlog_reg_UNIQUE">
-      <ColNames>idlog_reg</ColNames>
-      <UnderlyingIndexName>idlog_reg_UNIQUE</UnderlyingIndexName>
-    </key>
-    <column id="308" parent="287" name="idsubjects">
+    <column id="288" parent="285" name="idgrades">
       <AutoIncrement>1</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="309" parent="287" name="subjectname">
+    <column id="289" parent="285" name="name">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="310" parent="287" name="subjectyear">
-      <DataType>varchar(45)|0s</DataType>
+    <column id="290" parent="285" name="grade">
+      <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <index id="311" parent="287" name="idsubjects_UNIQUE">
-      <ColNames>idsubjects</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="312" parent="287" name="PRIMARY">
-      <ColNames>idsubjects</ColNames>
+    <key id="291" parent="285" name="PRIMARY">
+      <ColNames>idgrades</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="313" parent="287" name="idsubjects_UNIQUE">
-      <ColNames>idsubjects</ColNames>
-      <UnderlyingIndexName>idsubjects_UNIQUE</UnderlyingIndexName>
-    </key>
-    <column id="314" parent="288" name="iduser">
-      <AutoIncrement>13</AutoIncrement>
+    <column id="292" parent="286" name="idlog_reg">
+      <AutoIncrement>6</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="315" parent="288" name="firstname">
+    <column id="293" parent="286" name="firstname">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="316" parent="288" name="lastname">
+    <column id="294" parent="286" name="lastname">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="317" parent="288" name="username">
+    <column id="295" parent="286" name="rol">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="318" parent="288" name="password">
+    <column id="296" parent="286" name="email">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="319" parent="288" name="iduser_UNIQUE">
-      <ColNames>iduser</ColNames>
+    <column id="297" parent="286" name="phonenumber">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="298" parent="286" name="username">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="299" parent="286" name="password">
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <index id="300" parent="286" name="idlog_reg_UNIQUE">
+      <ColNames>idlog_reg</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="320" parent="288" name="username_UNIQUE">
-      <ColNames>username</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="321" parent="288" name="PRIMARY">
-      <ColNames>iduser</ColNames>
+    <key id="301" parent="286" name="PRIMARY">
+      <ColNames>idlog_reg</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="322" parent="288" name="iduser_UNIQUE">
-      <ColNames>iduser</ColNames>
-      <UnderlyingIndexName>iduser_UNIQUE</UnderlyingIndexName>
+    <key id="302" parent="286" name="idlog_reg_UNIQUE">
+      <ColNames>idlog_reg</ColNames>
+      <UnderlyingIndexName>idlog_reg_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="323" parent="288" name="username_UNIQUE">
-      <ColNames>username</ColNames>
-      <UnderlyingIndexName>username_UNIQUE</UnderlyingIndexName>
+    <column id="303" parent="287" name="idsubjects">
+      <AutoIncrement>7</AutoIncrement>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="304" parent="287" name="subjectname">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="305" parent="287" name="subjectyear">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <key id="306" parent="287" name="PRIMARY">
+      <ColNames>idsubjects</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
     </key>
   </database-model>
 </dataSource>

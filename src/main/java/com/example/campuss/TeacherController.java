@@ -52,4 +52,5 @@ public class TeacherController {
         stage.setScene(scene);
         stage.show();
     }
+
 }
