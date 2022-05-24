@@ -33,7 +33,6 @@
       <TextField fx:id="yearTextField" layoutX="52.0" layoutY="163.0" promptText="Year of study" />
       <TextField fx:id="sem1TextField" layoutX="52.0" layoutY="208.0" promptText="1semSubject" />
       <TextField fx:id="sem2TextField" layoutX="52.0" layoutY="260.0" promptText="2semSubject" />
-      <Button fx:id="registrationButton" layoutX="496.0" layoutY="337.0" mnemonicParsing="false" onAction="#registrationButton" text="send" />
       <Label fx:id="registrationMessageLabel" layoutX="48.0" layoutY="350.0" prefHeight="18.0" prefWidth="431.0" textFill="#ef0808">
          <font>
             <Font name="System Bold Italic" size="10.0" />
@@ -55,6 +54,6 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Button layoutX="55.0" layoutY="347.0" mnemonicParsing="false" onAction="#Back" text="Back" />
+      <Button layoutX="281.0" layoutY="287.0" mnemonicParsing="false" onAction="#registrationButton" text="Add" />
    </children>
 </AnchorPane>
