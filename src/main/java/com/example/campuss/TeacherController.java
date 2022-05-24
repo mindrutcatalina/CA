@@ -52,11 +52,13 @@ public class TeacherController {
         stage.setScene(scene);
         stage.show();
     }
-    public void gradesOnAction(ActionEvent event) throws IOException {
+
+    public void goToGrades(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AddGrades.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
 }
