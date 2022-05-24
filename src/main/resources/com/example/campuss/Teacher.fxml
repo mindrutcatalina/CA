@@ -14,7 +14,7 @@
                   <Font name="Britannic Bold" size="36.0" />
                </font>
             </Label>
-            <Button fx:id="logoutButton" layoutX="688.0" layoutY="52.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #63027b;" text="Log Out" textFill="WHITE">
+            <Button fx:id="logoutButton" layoutX="688.0" layoutY="52.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #63027b;" text="Log Out" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font></Button>
