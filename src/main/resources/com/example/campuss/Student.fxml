@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.StudentController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.StudentController">
     <children>
         <AnchorPane prefHeight="98.0" prefWidth="800.0" style="-fx-background-color: #63027b;">
             <children>
@@ -33,17 +32,22 @@
                         <Font size="24.0" />
                     </font>
                 </Button>
-                <Button fx:id="attendaceButton" layoutX="20.0" layoutY="304.0" mnemonicParsing="false" onAction="#attendaceButtonOnAction" style="-fx-background-color: #2e1136;" text="Attendance" textFill="WHITE">
+                <Button fx:id="attendaceButton" layoutX="20.0" layoutY="434.0" mnemonicParsing="false" onAction="#attendaceButtonOnAction" style="-fx-background-color: #2e1136;" text="Attendance" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
                 </Button>
-                <Button fx:id="gradesButton" layoutX="44.0" layoutY="383.0" mnemonicParsing="false" onAction="#gradesButtonOnAction" style="-fx-background-color: #2e1136;" text="Grades" textFill="WHITE">
+                <Button fx:id="gradesButton" layoutX="44.0" layoutY="363.0" mnemonicParsing="false" onAction="#gradesButtonOnAction" style="-fx-background-color: #2e1136;" text="Grades" textFill="WHITE">
                     <font>
                         <Font size="24.0" />
                     </font>
                 </Button>
             <Button fx:id="home" layoutX="24.0" layoutY="222.0" mnemonicParsing="false" onAction="#homeOnAction" prefHeight="51.0" prefWidth="154.0" style="-fx-background-color: #2e1136;" text="Homework" textFill="#fffdfd">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="exam" layoutX="31.0" layoutY="299.0" mnemonicParsing="false" onAction="#exam" prefHeight="25.0" prefWidth="133.0" style="-fx-background-color: #2e1136;" text="Exam" textFill="#fffafa">
                <font>
                   <Font size="24.0" />
                </font>

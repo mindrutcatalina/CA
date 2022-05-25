@@ -38,6 +38,8 @@ public class ViewSubjectsController implements Initializable {
     @FXML
     private TableView<User2> tableV;
 
+    private String username = LoginController.saveUsername;
+
 
     ObservableList<User2> list1 = FXCollections.observableArrayList();
 
@@ -46,7 +48,7 @@ public class ViewSubjectsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String  aaa = "SELECT subjectname from subjects ";
+        String  aaa = "SELECT subjectname from subjects where username ='"+ username +"'";
 
         try{
             Statement statement = connectDB.createStatement();

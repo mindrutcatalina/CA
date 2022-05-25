@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.AddGradesController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.AddGradesController">
     <children>
         <Label layoutX="186.0" layoutY="33.0" prefHeight="18.0" prefWidth="226.0" text="Add Grades ">
             <font>
@@ -26,7 +24,7 @@
             </font>
         </Label>
         <Button fx:id="AddOnActionButton" layoutX="236.0" layoutY="250.0" mnemonicParsing="false" onAction="#AddOnActionButton" text="Add" />
-        <Label fx:id="registrationMessageLabel" layoutX="85.0" layoutY="208.0" prefHeight="27.0" prefWidth="458.0" textFill="#fc0000">
+        <Label fx:id="registrationMessageLabel" layoutX="55.0" layoutY="288.0" prefHeight="27.0" prefWidth="458.0" textFill="#fc0000">
             <font>
                 <Font size="18.0" />
             </font>
@@ -38,5 +36,11 @@
          </font>
       </Label>
       <TextField fx:id="subjectTextField" layoutX="176.0" layoutY="134.0" prefHeight="25.0" prefWidth="213.0" promptText="Subject" />
+      <TextField fx:id="usernameTextField" layoutX="177.0" layoutY="209.0" prefHeight="25.0" prefWidth="213.0" promptText="Username" />
+      <Label layoutX="80.0" layoutY="213.0" prefHeight="18.0" prefWidth="62.0" text="Username">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

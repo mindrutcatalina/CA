@@ -27,6 +27,9 @@ public class AddGradesController {
     private TextField subjectTextField;
 
     @FXML
+    private TextField usernameTextField;
+
+    @FXML
     private Label registrationMessageLabel;
 
     @FXML
@@ -41,10 +44,12 @@ public class AddGradesController {
 
         String name = namestudentTextField.getText();
         String subject = subjectTextField.getText();
+        String username = usernameTextField.getText();
+
         Integer grade = Integer.valueOf(gradeTextField.getText());
 
-        String insertFields = "INSERT INTO admin.grades(name,subject,grade) VALUES('";
-        String insertValues = name + "','" + subject +"','"+ grade + "')";
+        String insertFields = "INSERT INTO admin.grades(name,subject,grade,username) VALUES('";
+        String insertValues = name + "','" + subject +"','"+ grade +"','"+ username + "')";
         String insertToRegister = insertFields + insertValues;
 
         try {
