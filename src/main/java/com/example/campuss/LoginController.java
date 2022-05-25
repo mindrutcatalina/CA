@@ -45,7 +45,6 @@ public class LoginController implements Initializable {
     @FXML
     private PasswordField enterPasswordField;
     private String rol;
-    public static String saveUsername;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -178,11 +177,10 @@ public class LoginController implements Initializable {
     public void validateLogin() {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String user = usernameTextField.getText();
 
         String hashedPassword = encodePassword(usernameTextField.getText(), enterPasswordField.getText());
         String verifyLogin = "SELECT count(1) FROM log_reg WHERE username = '" + usernameTextField.getText() + "' AND password ='" + hashedPassword + "'";
-        saveUsername = user;
+
 
         try {
             Statement statement = connectDB.createStatement();

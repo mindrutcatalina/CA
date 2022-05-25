@@ -30,8 +30,6 @@ public class SubjectsAddController{
 
     @FXML
     private TextField yearTextField;
-    @FXML
-    private TextField usernameTextField;
 
     public void addButtonOnAction(ActionEvent event) {
         addSubjects();
@@ -54,10 +52,9 @@ public class SubjectsAddController{
 
         String subjectname = nameSubjectTextField.getText();
         Integer subjectyear = Integer.valueOf(yearTextField.getText());
-        String username = usernameTextField.getText();
 
-        String insertFields = "INSERT INTO admin.subjects (subjectname,subjectyear,username)VALUES('";
-        String insertValues = subjectname + "','" + subjectyear +"','"+ username +"')";
+        String insertFields = "INSERT INTO admin.subjects (subjectname,subjectyear)VALUES('";
+        String insertValues = subjectname + "','" + subjectyear + "')";
         String insertToRegister = insertFields + insertValues;
 
         try {
