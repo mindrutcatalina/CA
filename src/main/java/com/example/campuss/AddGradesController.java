@@ -45,7 +45,6 @@ public class AddGradesController {
         String name = namestudentTextField.getText();
         String subject = subjectTextField.getText();
         String username = usernameTextField.getText();
-
         Integer grade = Integer.valueOf(gradeTextField.getText());
 
         String insertFields = "INSERT INTO admin.grades(name,subject,grade,username) VALUES('";
