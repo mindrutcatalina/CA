@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.ViewRequest">
+   <children>
+      <TableView fx:id="table" layoutX="24.0" layoutY="58.0" prefHeight="320.0" prefWidth="556.0">
+        <columns>
+          <TableColumn fx:id="Name" prefWidth="166.0" text="Name" />
+          <TableColumn fx:id="Year" prefWidth="162.0" text="Year" />
+            <TableColumn fx:id="Subject1" prefWidth="121.0" text="Subject1" />
+            <TableColumn fx:id="Subject2" prefWidth="106.0" text="Subject2" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

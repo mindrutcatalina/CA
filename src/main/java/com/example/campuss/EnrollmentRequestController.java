@@ -49,7 +49,7 @@ public class EnrollmentRequestController {
         String sem1 = sem1TextField.getText();
         String sem2 = sem2TextField.getText();
 
-        String insertFields = " INSERT INTO admin.enrollment_request(StudentName, YearOfStudy, 1semSubject, 2semSubject)VALUES('";
+        String insertFields = " INSERT INTO admin.enrollment_request(Name, Year, Subject1, Subject2)VALUES('";
         String insertValues = name + "','" + year + "','" +sem1 +"','" + sem2 +"')";
         String insertToRegister = insertFields + insertValues;
 
