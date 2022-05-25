@@ -57,6 +57,26 @@
             <artifactId>javafx-base</artifactId>
             <version>18</version>
         </dependency>
+        <dependency>
+            <groupId>com.yxt.opensdk.atool.subunit</groupId>
+            <artifactId>webview</artifactId>
+            <version>1.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vladsch.javafx-webview-debugger</groupId>
+            <artifactId>webview-debug-sample</artifactId>
+            <version>0.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>at.pardus.android</groupId>
+            <artifactId>webview-gm-ui</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yyter.web</groupId>
+            <artifactId>SafeWebView</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>

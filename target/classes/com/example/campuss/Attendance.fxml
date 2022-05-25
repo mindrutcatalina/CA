@@ -21,5 +21,6 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
+      <Button layoutX="39.0" layoutY="344.0" mnemonicParsing="false" onAction="#Back" prefHeight="26.0" prefWidth="66.0" text="Back" />
    </children>
 </AnchorPane>

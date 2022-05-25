@@ -37,7 +37,7 @@
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="attendanceButton" layoutX="20.0" layoutY="197.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #2e1136;" text="Attendance" textFill="WHITE">
+            <Button fx:id="attendanceButton" layoutX="20.0" layoutY="197.0" mnemonicParsing="false" onAction="#goToAttendance" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #2e1136;" text="Attendance" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
