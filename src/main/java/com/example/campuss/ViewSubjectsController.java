@@ -38,7 +38,9 @@ public class ViewSubjectsController implements Initializable {
     @FXML
     private TableView<User2> tableV;
 
-    public Parent root;
+    private String username = LoginController.saveUsername;
+
+
     ObservableList<User2> list1 = FXCollections.observableArrayList();
 
 
@@ -46,7 +48,7 @@ public class ViewSubjectsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String  aaa = "SELECT subjectname from subjects ";
+        String  aaa = "SELECT subjectname from subjects where username ='"+ username +"'";
 
         try{
             Statement statement = connectDB.createStatement();
@@ -81,12 +83,13 @@ public class ViewSubjectsController implements Initializable {
 
         }
 
-    public void backOnEnrollment(ActionEvent event) throws IOException {
+    public void back2OnAction(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("EnrollmentRequest.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
     }
-    }
+}
 

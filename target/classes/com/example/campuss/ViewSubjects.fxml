@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.ViewSubjectsController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.ViewSubjectsController">
    <children>
       <TableView fx:id="tableV" layoutX="18.0" layoutY="24.0" prefHeight="524.0" prefWidth="768.0">
         <columns>
           <TableColumn fx:id="subjectname" prefWidth="726.0" text="subjectname" />
         </columns>
       </TableView>
-      <Button fx:id="back" layoutX="18.0" layoutY="561.0" mnemonicParsing="false" onAction="#backOnAction" prefHeight="26.0" prefWidth="162.0" text="Back to Student page" />
-      <Button layoutX="570.0" layoutY="561.0" mnemonicParsing="false" onAction="#backOnEnrollment" prefHeight="26.0" prefWidth="198.0" text="Back to Enrollment page" />
+      <Button fx:id="back" layoutX="18.0" layoutY="561.0" mnemonicParsing="false" onAction="#backOnAction" prefHeight="25.0" prefWidth="145.0" text="Back to student page" />
+      <Button fx:id="BackEnrollment" layoutX="620.0" layoutY="561.0" mnemonicParsing="false" onAction="#back2OnAction" prefHeight="25.0" prefWidth="166.0" text="Back to Enrollment page" />
    </children>
 </AnchorPane>
