@@ -39,15 +39,20 @@ public class ViewGrades implements Initializable {
     @FXML
     private TableView<User3> table;
 
+    private String username = LoginController.saveUsername;
+
     ObservableList<User3> list3 = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String  bbbb = "SELECT name,subject,grade From grades";
+      
 
         try{
+
+            String  bbbb = "SELECT name,subject,grade From grades where username ='"+ username +"'";
             Statement statement = connectDB.createStatement();
             ResultSet queryOutput = statement.executeQuery(bbbb);
 
@@ -69,6 +74,7 @@ public class ViewGrades implements Initializable {
         }catch (SQLException e){
             Logger.getLogger(List.class.getName()).log(Level.SEVERE,null , e);
             e.printStackTrace();
+            e.getCause();
         }
     }
 
