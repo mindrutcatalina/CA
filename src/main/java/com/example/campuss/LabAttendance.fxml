@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.LabAttendanceController">
+   <children>
+      <Label layoutX="57.0" layoutY="56.0" prefHeight="18.0" prefWidth="234.0" text="Present Laboratory">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font>
+      </Label>
+      <TextField layoutX="300.0" layoutY="130.0" prefHeight="26.0" prefWidth="191.0" promptText="Name" />
+      <TextField layoutX="300.0" layoutY="212.0" prefHeight="26.0" prefWidth="191.0" promptText="Number of presents" />
+      <Label layoutX="57.0" layoutY="132.0" prefHeight="22.0" prefWidth="191.0" text="Enter the student's name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="214.0" prefHeight="22.0" prefWidth="210.0" text="Enter the number of presents">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="259.0" layoutY="319.0" mnemonicParsing="false" text="Add" />
+      <Label layoutX="110.0" layoutY="276.0" prefHeight="18.0" prefWidth="344.0" textFill="#ff0202" />
+   </children>
+</AnchorPane>
