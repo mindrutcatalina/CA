@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.AttendanceLabController">
+<AnchorPane fx:id="Back" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.AttendanceLabController">
     <children>
         <Label layoutX="57.0" layoutY="56.0" prefHeight="18.0" prefWidth="234.0" text="Present Laboratory">
             <font>
@@ -31,5 +31,6 @@
             <Font size="15.0" />
          </font>
       </Label>
+      <Button fx:id="Back" layoutX="22.0" layoutY="353.0" mnemonicParsing="false" onAction="#back" text="Back" />
     </children>
 </AnchorPane>

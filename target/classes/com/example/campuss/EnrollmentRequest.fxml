@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.EnrollmentRequestController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.EnrollmentRequestController">
     <children>
         <Label layoutX="175.0" layoutY="29.0" prefHeight="18.0" prefWidth="250.0" text="Enrollment Request">
             <font>
@@ -54,6 +51,7 @@
                 <Font name="System Bold Italic" size="15.0" />
             </font>
         </Label>
-        <Button layoutX="281.0" layoutY="287.0" mnemonicParsing="false" onAction="#registrationButton" text="Add" />
+        <Button layoutX="281.0" layoutY="303.0" mnemonicParsing="false" onAction="#registrationButton" text="Add" />
+      <Button fx:id="Back" layoutX="43.0" layoutY="347.0" mnemonicParsing="false" onAction="#Back" text="Back" />
     </children>
 </AnchorPane>
