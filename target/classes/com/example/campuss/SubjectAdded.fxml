@@ -15,7 +15,7 @@
       <TextField fx:id="yearTextField" layoutX="56.0" layoutY="175.0" prefHeight="26.0" prefWidth="284.0" promptText="Year of Study" />
       <Button fx:id="addButtonOnAction" layoutX="147.0" layoutY="292.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="26.0" prefWidth="71.0" text="Add" />
       <Button layoutX="455.0" layoutY="324.0" mnemonicParsing="false" onAction="#Back" prefHeight="26.0" prefWidth="86.0" text="Back" />
-      <Label fx:id="registrationMessageLabel" layoutX="147.0" layoutY="296.0" prefHeight="18.0" prefWidth="246.0" textFill="#ff0101" />
+      <Label fx:id="registrationMessageLabel" layoutX="147.0" layoutY="262.0" prefHeight="18.0" prefWidth="246.0" textFill="#ff0101" />
       <TextField fx:id="usernameTextField" layoutX="56.0" layoutY="225.0" prefHeight="25.0" prefWidth="284.0" promptText="Username" />
    </children>
 </AnchorPane>

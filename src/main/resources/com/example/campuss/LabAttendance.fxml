@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="Back" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.AttendanceLabController">
+    <children>
+        <Label layoutX="57.0" layoutY="56.0" prefHeight="18.0" prefWidth="234.0" text="Present Laboratory">
+            <font>
+                <Font name="System Bold Italic" size="26.0" />
+            </font>
+        </Label>
+        <TextField fx:id="nameTextField" layoutX="300.0" layoutY="130.0" prefHeight="26.0" prefWidth="191.0" promptText="Name" />
+        <TextField fx:id="numberTextField" layoutX="300.0" layoutY="212.0" prefHeight="26.0" prefWidth="191.0" promptText="Number of presents" />
+        <Label layoutX="57.0" layoutY="132.0" prefHeight="22.0" prefWidth="191.0" text="Enter the student's name">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="57.0" layoutY="214.0" prefHeight="22.0" prefWidth="210.0" text="Enter the number of presents">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Button fx:id="add" layoutX="263.0" layoutY="340.0" mnemonicParsing="false" onAction="#addButtonLab" text="Add" />
+        <Label fx:id="registrationMessageLabel" layoutX="110.0" layoutY="313.0" prefHeight="18.0" prefWidth="344.0" textFill="#ff0202" />
+      <TextField fx:id="usernameTextField" layoutX="297.0" layoutY="273.0" prefHeight="25.0" prefWidth="197.0" promptText="Username" />
+      <Label layoutX="54.0" layoutY="275.0" prefHeight="17.0" prefWidth="197.0" text="Enter the username">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="Back" layoutX="22.0" layoutY="353.0" mnemonicParsing="false" onAction="#back" text="Back" />
+    </children>
+</AnchorPane>

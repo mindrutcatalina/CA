@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,47 +16,42 @@ import java.sql.Connection;
 import java.sql.Statement;
 import java.util.Objects;
 
-public class AddGradesController {
+public class AttendanceLabController {
+
 
     @FXML
-    public TextField gradeTextField;
+    private TextField nameTextField;
 
     @FXML
-    public TextField namestudentTextField;
-
-    @FXML
-    private TextField subjectTextField;
-
+    private TextField numberTextField;
     @FXML
     private TextField usernameTextField;
 
     @FXML
+    void addButtonLab(ActionEvent event) {
+        addButtonLab();
+    }
+    @FXML
     private Label registrationMessageLabel;
 
-    @FXML
-    public void AddOnActionButton(ActionEvent event) {
-        AddOnActionButton();
-    }
-
-
-    public void AddOnActionButton() {
+    public void addButtonLab() {
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
 
-        String name = namestudentTextField.getText();
-        String subject = subjectTextField.getText();
+        String name = nameTextField.getText();
+        Integer number = Integer.valueOf(numberTextField.getText());
         String username = usernameTextField.getText();
-        Integer grade = Integer.valueOf(gradeTextField.getText());
 
-        String insertFields = "INSERT INTO admin.grades(name,subject,grade,username) VALUES('";
-        String insertValues = name + "','" + subject +"','"+ grade +"','"+ username + "')";
+        String insertFields = "INSERT INTO admin.present(name,number,username) VALUES('";
+        String insertValues = name + "','" + number + "','" + username +"')";
         String insertToRegister = insertFields + insertValues;
 
         try {
             Statement statement = connectDB.createStatement();
             statement.executeUpdate(insertToRegister);
 
-            registrationMessageLabel.setText("Grade has been registered successfully !");
+
+            registrationMessageLabel.setText("Laboratory attendance has been registered successfully !");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,6 +60,8 @@ public class AddGradesController {
         }
     }
 
+
+
     public void back(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Teacher.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -71,6 +69,4 @@ public class AddGradesController {
         stage.setScene(scene);
         stage.show();
     }
-
-
 }

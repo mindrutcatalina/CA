@@ -49,7 +49,7 @@ public class EnrollmentRequestController {
         String sem1 = sem1TextField.getText();
         String sem2 = sem2TextField.getText();
 
-        String insertFields = " INSERT INTO admin.enrollment_request(StudentName, YearOfStudy, 1semSubject, 2semSubject)VALUES('";
+        String insertFields = " INSERT INTO admin.enrollment_request(Name, Year, Subject1, Subject2)VALUES('";
         String insertValues = name + "','" + year + "','" +sem1 +"','" + sem2 +"')";
         String insertToRegister = insertFields + insertValues;
 
@@ -70,8 +70,12 @@ public class EnrollmentRequestController {
     public Parent root;
 
 
-
-
-
+    public void Back(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Student.fxml")));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
 

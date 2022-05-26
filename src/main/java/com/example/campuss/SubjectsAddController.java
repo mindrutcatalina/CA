@@ -53,8 +53,8 @@ public class SubjectsAddController{
         Connection connectDB = connectNow.getConnection();
 
         String subjectname = nameSubjectTextField.getText();
-        String username = usernameTextField.getText();
         Integer subjectyear = Integer.valueOf(yearTextField.getText());
+        String username = usernameTextField.getText();
 
         String insertFields = "INSERT INTO admin.subjects (subjectname,subjectyear,username)VALUES('";
         String insertValues = subjectname + "','" + subjectyear +"','"+ username +"')";

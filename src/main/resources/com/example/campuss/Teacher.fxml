@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.TeacherController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d3b3bf;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.campuss.TeacherController">
    <children>
       <AnchorPane prefHeight="93.0" prefWidth="800.0" style="-fx-background-color: #63027b;" AnchorPane.bottomAnchor="507.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -20,9 +19,9 @@
                </font></Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="91.0" prefHeight="509.0" prefWidth="177.0" style="-fx-background-color: #2e1136;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="623.0" AnchorPane.topAnchor="91.0">
+      <AnchorPane layoutY="92.0" prefHeight="508.0" prefWidth="216.0" style="-fx-background-color: #2e1136;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="584.0" AnchorPane.topAnchor="92.0">
          <children>
-            <Button fx:id="messageButton" layoutX="26.0" layoutY="261.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="122.0" style="-fx-background-color: #2e1136;" text="Message" textFill="#faf7f7">
+            <Button fx:id="messageButton" layoutX="26.0" layoutY="307.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="122.0" style="-fx-background-color: #2e1136;" text="Message" textFill="#faf7f7">
                <font>
                   <Font size="21.0" />
                </font>
@@ -37,9 +36,19 @@
                   <Font size="21.0" />
                </font>
             </Button>
-            <Button fx:id="attendanceButton" layoutX="20.0" layoutY="197.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #2e1136;" text="Attendance" textFill="WHITE">
+            <Button fx:id="attendanceButton" layoutX="20.0" layoutY="197.0" mnemonicParsing="false" onAction="#goToAttendance" prefHeight="45.0" prefWidth="172.0" style="-fx-background-color: #2e1136;" text="AttendanceCourse" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="request" layoutX="26.0" layoutY="373.0" mnemonicParsing="false" onAction="#request" prefHeight="45.0" prefWidth="122.0" style="-fx-background-color: #2e1136;" text="Request" textFill="#eeeded">
                <font>
                   <Font size="21.0" />
+               </font>
+            </Button>
+            <Button fx:id="attendanceLab" layoutX="34.0" layoutY="254.0" mnemonicParsing="false" onAction="#goToAttendance1" prefHeight="25.0" prefWidth="122.0" style="-fx-background-color: #2e1136;" text="AttendanceLab" textFill="#e4e3e3">
+               <font>
+                  <Font size="15.0" />
                </font>
             </Button>
          </children>

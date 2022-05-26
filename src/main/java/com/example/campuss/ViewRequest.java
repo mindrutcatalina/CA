@@ -9,7 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -26,70 +25,71 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ViewSubjectsController implements Initializable {
+public class ViewRequest implements Initializable {
 
 
     @FXML
-    private TableColumn<User2, String> subjectname;
-
+    private TableColumn<User4, String> Name;
+    @FXML
+    private TableColumn<User4, String> Subject1;
+    @FXML
+    private TableColumn<User4, String> Subject2;
+    @FXML
+    private TableColumn<User4, Integer> Year;
 
     @FXML
-    public Button Back;
-    @FXML
-    private TableView<User2> tableV;
-
-    private String username = LoginController.saveUsername;
+    private TableView<User4> table;
 
 
-    ObservableList<User2> list1 = FXCollections.observableArrayList();
-
+    ObservableList<User4> list4 = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String  aaa = "SELECT subjectname from subjects where username ='"+ username +"'";
+
 
         try{
+
+            String  cccc = "SELECT Name,Year,Subject1,Subject2 from enrollment_request";
             Statement statement = connectDB.createStatement();
-            ResultSet queryOutput = statement.executeQuery(aaa);
+            ResultSet queryOutput = statement.executeQuery(cccc);
 
             while(queryOutput.next()){
-                String subjectname = queryOutput.getString("subjectname");
+                String name = queryOutput.getString("Name");
+                Integer year = queryOutput.getInt("Year");
+                String sem1 = queryOutput.getString("Subject1");
+                String sem2 = queryOutput.getString("Subject2");
 
 
-                list1.add(new User2 (subjectname));
+                list4.add(new User4(name,year, sem1,sem2));
 
             }
-            subjectname.setCellValueFactory(new PropertyValueFactory<User2,String>("subjectname"));
+            Name.setCellValueFactory(new PropertyValueFactory<User4,String>("Name"));
+            Year.setCellValueFactory(new PropertyValueFactory<User4 ,Integer>("Year"));
+            Subject1.setCellValueFactory(new PropertyValueFactory<User4,String>("Subject1"));
+            Subject2.setCellValueFactory(new PropertyValueFactory<User4,String>("Subject2"));
 
 
-            tableV.setItems(list1);
+            table.setItems(list4);
 
 
         }catch (SQLException e){
             Logger.getLogger(List.class.getName()).log(Level.SEVERE,null , e);
             e.printStackTrace();
+            e.getCause();
         }
     }
 
 
-    public void backOnAction(ActionEvent event) throws IOException {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Student.fxml")));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        }
-
-    public void back2OnAction(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("EnrollmentRequest.fxml")));
+    public void back(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Teacher.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 }
+
 

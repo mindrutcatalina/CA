@@ -9,7 +9,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -26,70 +25,59 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ViewSubjectsController implements Initializable {
-
-
-    @FXML
-    private TableColumn<User2, String> subjectname;
-
+public class ViewAttendance implements Initializable {
 
     @FXML
-    public Button Back;
+    private TableColumn<User5, String> name;
+
     @FXML
-    private TableView<User2> tableV;
+    private TableColumn<User5, Integer> number;
+
+    @FXML
+    private TableView<User5> table;
 
     private String username = LoginController.saveUsername;
 
-
-    ObservableList<User2> list1 = FXCollections.observableArrayList();
-
+    ObservableList<User5> list5 = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         DatabaseConnection connectNow = new DatabaseConnection();
         Connection connectDB = connectNow.getConnection();
-        String  aaa = "SELECT subjectname from subjects where username ='"+ username +"'";
+
 
         try{
+
+            String  ggg = "SELECT name,number From present where username ='"+ username +"'";
             Statement statement = connectDB.createStatement();
-            ResultSet queryOutput = statement.executeQuery(aaa);
+            ResultSet queryOutput = statement.executeQuery(ggg);
 
             while(queryOutput.next()){
-                String subjectname = queryOutput.getString("subjectname");
+                String name = queryOutput.getString("name");
+                Integer number = queryOutput.getInt("number");
 
-
-                list1.add(new User2 (subjectname));
+                list5.add(new User5(name , number));
 
             }
-            subjectname.setCellValueFactory(new PropertyValueFactory<User2,String>("subjectname"));
+            name.setCellValueFactory(new PropertyValueFactory<User5,String>("name"));
+            number.setCellValueFactory(new PropertyValueFactory<User5 ,Integer>("number"));
 
-
-            tableV.setItems(list1);
+            table.setItems(list5);
 
 
         }catch (SQLException e){
             Logger.getLogger(List.class.getName()).log(Level.SEVERE,null , e);
             e.printStackTrace();
+            e.getCause();
         }
     }
 
-
-    public void backOnAction(ActionEvent event) throws IOException {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Student.fxml")));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        }
-
-    public void back2OnAction(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("EnrollmentRequest.fxml")));
+    public void Back(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Student.fxml")));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 }
-
